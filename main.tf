@@ -38,5 +38,4 @@ resource "azurerm_subnet" "subnet" {
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.8.0/24"]
 
-  tags = local.tags
 }
