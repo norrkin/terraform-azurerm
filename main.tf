@@ -12,6 +12,13 @@ terraform {
   }
 }
 
+module "environment_labels" {
+  tags = {
+    "created-by"  = "terraform"
+    "Environment" = "Development"
+  }
+}
+
 provider "azurerm" {
   features {}
 }
@@ -19,6 +26,8 @@ provider "azurerm" {
 resource "azurerm_resource_group" "terraform-azurerm-backend" {
   name     = var.resource_group_name
   location = var.resource_group_location
+
+  tags = module.environment_labels.tags
 }
 
 resource "azurerm_virtual_network" "vnet" {
@@ -26,4 +35,6 @@ resource "azurerm_virtual_network" "vnet" {
   address_space       = ["10.0.0.0/16"]
   location            = var.resource_group_location
   resource_group_name = var.resource_group_name
+
+  tags = module.environment_labels.tags
 }
