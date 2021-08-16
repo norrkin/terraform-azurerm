@@ -31,3 +31,12 @@ resource "azurerm_virtual_network" "vnet" {
 
   tags = local.tags
 }
+
+resource "azurerm_subnet" "subnet" {
+  name                 = "terraform-azurerm-backend-subnet"
+  resource_group_name  = var.resource_group_name
+  virtual_network_name = azurerm_virtual_network.vnet.name
+  address_prefixes     = ["10.0.8.0/24"]
+
+  tags = local.tags
+}
