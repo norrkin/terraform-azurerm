@@ -3,7 +3,6 @@ variable "resource_group_name" {
   default = "terraform-azurerm-backend"
 }
 
-variable "resource_group_location" {
-  type    = string
+variable "location" {
   default = "uksouth"
 }

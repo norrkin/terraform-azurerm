@@ -1,6 +1,7 @@
 locals {
   tags = {
-    "created-by"  = "terraform"
+    "Name" = "backend"
     "Environment" = "Development"
+    "created-by"  = "terraform"
   }
 }
