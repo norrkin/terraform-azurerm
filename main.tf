@@ -38,7 +38,10 @@ resource "azurerm_network_security_group" "security_group" {
     destination_address_prefix = "*"
   }
 
-  tags = {
-    Environment = "Production"
-  }
+  tags = merge(
+    local.tags,
+    {
+      Environment = "Production"
+    },
+  )
 }
