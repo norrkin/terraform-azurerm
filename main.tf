@@ -28,7 +28,7 @@ resource "azurerm_network_security_group" "security_group" {
 
   security_rule {
     name                       = "test123"
-    priority                   = 100
+    priority                   = 101
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
@@ -41,7 +41,7 @@ resource "azurerm_network_security_group" "security_group" {
   tags = merge(
     module.backend_label.tags,
     {
-      Environment = "Production"
+      additional_tag = "Production"
     },
   )
 }
