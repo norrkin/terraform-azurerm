@@ -5,3 +5,7 @@ output "resource_group_id" {
 output "tags" {
   value = local.tags
 }
+
+output "name" {
+  value = module.backend_label.tags.name
+}
