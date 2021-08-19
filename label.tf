@@ -1,5 +1,5 @@
 module "backend_label" {
-  source   = "https://github.com/norrkin/terraform-null-label"
+  source   = "github.com/norrkin/terraform-null-label"
 
   environment  = "nonprod"
   stage      = "development"
