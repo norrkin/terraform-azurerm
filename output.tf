@@ -6,6 +6,8 @@ output "tags" {
   value = local.tags
 }
 
-output "name" {
-  value = module.backend_label.tags.name
+output "label1" {
+  value = {
+    name = module.backend_label.name
+  }
 }
