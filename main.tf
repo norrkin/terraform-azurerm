@@ -39,7 +39,7 @@ resource "azurerm_network_security_group" "security_group" {
   }
 
   tags = merge(
-    local.tags,
+    module.backend_label.tags,
     {
       Environment = "Production"
     },
