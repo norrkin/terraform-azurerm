@@ -39,7 +39,7 @@ resource "azurerm_network_security_group" "security_group" {
   }
 
   tags = merge(
-    module.backend_label.tags,
+    module.labels.tags,
     {
       additional_tag = "Production"
     },
