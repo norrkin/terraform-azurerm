@@ -8,6 +8,6 @@ output "tags" {
 
 output "label1" {
   value = {
-    name = module.backend_label.name
+    name = module.labels.name
   }
 }
