@@ -1,13 +1,16 @@
-module "backend_label" {
+module "labels" {
   source = "github.com/norrkin/terraform-null-label"
 
-  namespace   = "norrkin"
   environment = "nonprod"
   stage       = "development"
   name        = "backend"
   delimiter   = "-"
 
-  label_order = ["namespace", "environment", "stage"]
+  label_order = [
+    "name",
+    "environment",
+    "stage"
+  ]
 
   tags = {
     "created-by" = "terraform"
